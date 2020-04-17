@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import '/variables.scss';
+
+html{
+
+    .header{
+        background-color: $lightpeach;
+        padding: 2% 5%;
+        h1{
+            color: $rasberry;
+            text-decoration: none;
+        }
+    }
+    .question{
+        margin: 2% 5%;
+    }
+    .ask-question{
+        color: #ffffff;
+        border-color: #fff;
+        @include btn-ask-question;
+        margin: 2% 5%;
+        a{
+        
+       
+        }
+    }
+}

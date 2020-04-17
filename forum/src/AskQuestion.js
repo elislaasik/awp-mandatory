@@ -21,9 +21,9 @@ class AskQuestion extends Component {
     handleSubmit(event){
         event.preventDefault();
                 const newQuestion = this.state.questionInput
-                const newId = this.state.questionInput
-                const newAnswers = [] 
-                this.props.submit(newId ,newQuestion, newAnswers)
+                //const newId = this.state.questionInput
+                //const newAnswers = [] 
+                this.props.submit(newQuestion)
                 navigate("/")
                 
     }

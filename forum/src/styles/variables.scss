@@ -1,0 +1,47 @@
+//colors
+$peach : #edc7b7;
+$lightpeach: #eee2dc;
+$murkygray: #bab2b5;
+$darkblue: #123c69;
+$rasberry: #ac3b61;
+
+
+
+//font
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+$big: 3rem;
+$regular: 1.4rem;
+$medium: 2.5rem;
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+h1{
+    color: $darkblue;
+    font-size: $big;
+    
+}
+p{
+    color: $darkblue;
+    font-size: $regular;
+}
+a{
+    text-decoration: none;
+}
+
+@mixin btn-ask-question {
+    background-color: $rasberry;
+    color: $lightpeach;
+    font-size: $medium;
+    padding: 2%;
+    border-radius: 5px;
+    
+    &:hover {
+       background-color: #8A58B7;
+       box-shadow: 0 .125em rgba(255,255,255,.4), inset 0 .063em   rgba(255,255,255,.4), inset 0 -0.188em #804FAD;
+    }
+    &:active {
+       box-shadow: inset 0 0 1.094em #472566, inset 0 .063em #390668, inset 0 -0.188em #682CA0, 0 .063em rgba(255,255,255,.4);  
+    }
+}

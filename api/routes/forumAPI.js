@@ -2,22 +2,23 @@ const questions = [
     {
       id: 1,
       text:'Which was first, chicken or the egg?',
-      answers:[{content:'Egg, where have you been living all this time?', upvotes:8, downvotes:0 }, { content:'Maybe chicken', upvotes: 0, downvotes: 1}]
+      answers:[{id: 1, content:'Egg, where have you been living all this time?', votes: 8 }, {id:2, content:'Maybe chicken', votes: 1}]
     },
     {
       id: 2,
       text:'How does a running camel sound?',
-      answers:[{conteny: 'Tired', upvotes: 2, downvotes:0}]
+      answers:[{id: 1, content: 'Tired', votes: 2}]
     },{
       id: 3,
       text:'How many floors are in the Infinite Hotel?',
-      answers:[ {content:'A loooooot', upvotes:0, downvotes:0}]
+      answers:[ {id: 1, content:'A loooooot', votes: 0}]
     }
   ]
 
 
 var express = require('express');
 var router = express.Router();
+
 
 //get all data 
 router.get('/', function(req, res, next) {
@@ -27,13 +28,14 @@ router.get('/', function(req, res, next) {
 //post a question
 
 router.post('/post1', (req, res) => {
-    const id = Math.random();
+    //const id = Math.random();
     const text = req.body.text;
     const answers = [];
+    const id = questions.length + 1
     const newQuestion = {
-        text: text,
-        id: id,
-        answers: answers
+      id: id,
+      text: text,
+      answers: answers
     };
     questions.push(newQuestion);
     res.json(questions);
@@ -42,15 +44,17 @@ router.post('/post1', (req, res) => {
 //post an answer
 router.post('/post2', (req, res) => {
     const id = req.body.id;
-    const text = req.body.text;
-    const upvote = 0;
-    const downvote = 0;
+    const content = req.body.answer;
+    const correctQuestion = questions.find(qu
+      estion => question.id === parseInt(id));
+    const answerId = correctQuestion.answers.length + 1
+    const votes = 0;
     const newAnswer = {
-        content: text,
-        upvotes: upvote,
-        downvotes: downvote
+        id: answerId , 
+        content: content,
+        votes: votes
     };
-    const correctQuestion = questions.find(question => question.id === parseInt(id));
+    
     correctQuestion.answers.push(newAnswer)
     res.json(questions);
 });

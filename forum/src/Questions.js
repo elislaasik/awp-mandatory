@@ -12,10 +12,6 @@ class Questions extends Component {
         let questions = this.props.data
         let list = questions.map(content)
 
-        
-      
-
-
         return (
             <div>
                 <ul>

@@ -24,10 +24,8 @@ answerSubmit(event){
 event.preventDefault();
         const newAnswer = this.state.answerInput
         const newId = this.props.id
-        const newUpvote = 0
-        const newDownvote = 0
         //navigate("/")
-        this.props.postAnswer(newAnswer, newId, newUpvote, newDownvote);
+        this.props.postAnswer(newAnswer, newId);
 }
 
     render() {
