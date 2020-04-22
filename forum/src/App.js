@@ -32,6 +32,7 @@ componentDidMount(){
 
   getQuestion(id){
     return this.state.questions.find(question => question.id === parseInt(id))
+    
   }
 
   async addQuestion(text){
@@ -75,6 +76,7 @@ updateQuestion(questionId, answerId, newVote){
         <div className="header">
         <Link to="/"><h1 className="logo">Ask and you shall receive</h1></Link>
         </div>
+        <div className="main">
         <Router>
           <Questions data={this.state.questions} path="/"/>
           <Question path="/question/:id" 
@@ -84,10 +86,11 @@ updateQuestion(questionId, answerId, newVote){
           >
             </Question>
         
-          <AskQuestion path="/AskQuestion" submit={
-            ( text) => this.addQuestion( text)}/>
+          <AskQuestion path="/AskQuestion" submit={ ( text) => this.addQuestion( text)}/>
         </Router>
-        <button className="ask-question"><Link to="/AskQuestion">Ask a question</Link></button>
+        </div>
+        
+          <button className="ask-question"><Link to="/AskQuestion">Ask a question</Link></button>
         
       </div>
     );

@@ -45,8 +45,7 @@ router.post('/post1', (req, res) => {
 router.post('/post2', (req, res) => {
     const id = req.body.id;
     const content = req.body.answer;
-    const correctQuestion = questions.find(qu
-      estion => question.id === parseInt(id));
+    const correctQuestion = questions.find(question => question.id === parseInt(id));
     const answerId = correctQuestion.answers.length + 1
     const votes = 0;
     const newAnswer = {

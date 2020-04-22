@@ -18,14 +18,46 @@ html{
     .question{
         margin: 2% 5%;
     }
+    .main{
+        margin: 2% 5%;
+
+    }
     .ask-question{
         color: #ffffff;
         border-color: #fff;
         @include btn-ask-question;
-        margin: 2% 5%;
+        margin: 1% 5%;
         a{
         
        
+        }
+    }
+    .add-question-component{
+        .question-input{
+            padding: 8px 6px;
+            margin: 0% 2%;
+            border-radius: 5px;
+        }
+        .question-button{
+            @include btn-secondary;
+            margin-top: 10px;
+        }
+    }
+    .question-component{
+        .answer{
+            padding-top: 10px;
+        }
+    }
+    .post-answer{
+        padding-top:2%;
+        .answer-input{
+            padding: 8px 6px;
+            margin: 0% 2%;
+            border-radius: 5px;
+        }
+        .answer-button{
+            @include btn-secondary;
+            margin-top: 10px;
         }
     }
 }

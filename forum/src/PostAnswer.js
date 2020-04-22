@@ -24,19 +24,18 @@ answerSubmit(event){
 event.preventDefault();
         const newAnswer = this.state.answerInput
         const newId = this.props.id
-        //navigate("/")
         this.props.postAnswer(newAnswer, newId);
 }
 
     render() {
         
         return (
-            <div>
+            <div className="post-answer">
                 <form className="form" onSubmit={this.answerSubmit}>
                                 <label> Post answer:
-                                        <input type="text" onChange={this.answerChange} value={this.state.text}  name="answerInput"/>
+                                        <input className="answer-input" type="text" onChange={this.answerChange} value={this.state.text}  name="answerInput"/>
                                 </label> <br/>
-                                <input type="submit" value="submit"/>
+                                <input type="submit" className="answer-button" value="Submit"/>
                         </form>
             </div>
         );

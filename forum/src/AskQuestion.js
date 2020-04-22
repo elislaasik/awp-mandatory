@@ -31,13 +31,13 @@ class AskQuestion extends Component {
     render() {
        
         return (
-            <div>
+            <div className="add-question-component">
                 <h2>Ask a question</h2>
                 <form className="form" onSubmit={this.handleSubmit}>
                                 <label> New question:
-                                        <input type="text" onChange={this.handleChange} value={this.state.text}  name="questionInput"/>
+                                        <input className="question-input" type="text" onChange={this.handleChange} value={this.state.text}  name="questionInput"/>
                                 </label> <br/>
-                                <input type="submit" value="submit"/>
+                                <input type="submit" className="question-button" value="Submit"/>
                         </form>
 
                 

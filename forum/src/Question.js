@@ -1,30 +1,32 @@
 import React, {Component} from 'react';
 import PostAnswer from './PostAnswer';
-import CalculateVotes from './CalculateVotes';
 
 class Question extends Component {
     constructor(props){
         super(props);
+        
         this.state = {
               question: this.props.getQuestion(this.props.id)
         }
-        console.log(this.state.question)
+       // this.onVoteClick = this.onVoteClick.bind(this)
  }
 
     
 onVoteClick(answerId){
-    const questionId = this.state.question.id
+    /*const questionId = this.state.question.id
     const rightAnswer = this.state.question.answers.find(answer => answer.id === parseInt(answerId))
+ 
     const newVote = rightAnswer.votes + 1
     this.state.question.rightAnswer.votes =  newVote
-    const currentState = this.state.question
+    const currentState = this.state.questionss
       this.setState(_ => ({
         
-        question: currentState
+        question:currentState
       }));
       console.log(currentState)
       this.props.updateQuestion(questionId, answerId, newVote)
-       //questionState
+       //questionState 
+       <button onClick={() => this.onVoteClick(a.id)}> + </button>*/
  //  TODO this. set state update the questions answer based on the id
 }
     render() {
@@ -32,7 +34,6 @@ onVoteClick(answerId){
         const question = this.props.getQuestion(id)
         let content = 'loading'
         let answers = []
-        //let questions = this.props.questionData
         
         if(question){
             content = question.text
@@ -40,10 +41,8 @@ onVoteClick(answerId){
             answers = question.answers.map(a => 
                 {
                  
-                return <div> 
+                return <div className="answer"> 
                     <p>{a.content}</p>
-                    
-                    <button onClick={() => this.onVoteClick(a.id)}> + </button>
                     <p>Sum: {a.votes}</p>
                 </div>
                
@@ -51,7 +50,7 @@ onVoteClick(answerId){
         }
         
         return (
-            <div>
+            <div className="question-component">
                 <h2>{content}</h2>
                 <h3>Answers</h3>
                 <ul>{answers}</ul>
