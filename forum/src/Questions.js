@@ -10,7 +10,7 @@ class Questions extends Component {
                     <Link to={"/question/"+elm.id}>{elm.text}</Link>
                 </li>
         let questions = this.props.data
-        let list = questions.map(content)
+        let list = this.props.data.map(content)
 
         return (
             <div>

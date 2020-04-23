@@ -91,7 +91,7 @@ updateQuestion(questionId, answerId, newVote){
         </div>
         
           <button className="ask-question"><Link to="/AskQuestion">Ask a question</Link></button>
-        
+        ╝
       </div>
     );
   }
