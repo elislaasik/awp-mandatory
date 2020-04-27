@@ -19,11 +19,12 @@ class App extends Component {
   }
 
   async callAPI() {
-    let data = await fetch("http://localhost:9000/forumAPI");
+    let data = await fetch("http://localhost:8080/");
     if (data) data = await data.json();
     this.setState(_ => ({
         questions: data
     }));
+    console.log(this.state.questions)
 }
 
 componentDidMount(){
@@ -31,12 +32,12 @@ componentDidMount(){
 }
 
   getQuestion(id){
-    return this.state.questions.find(question => question.id === parseInt(id))
+    return this.state.questions.find(question => question._id === id)
     
   }
 
   async addQuestion(text){
-    const response = await fetch('http://localhost:9000/forumAPI/post1', {
+    const response = await fetch('http://localhost:8080/post1', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -52,7 +53,7 @@ componentDidMount(){
 
 
   async postAnswer(answer, id){
-    const response = await fetch('http://localhost:9000/forumAPI/post2', {
+    const response = await fetch('http://localhost:8080/post3', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -79,7 +80,7 @@ updateQuestion(questionId, answerId, newVote){
         <div className="main">
         <Router>
           <Questions data={this.state.questions} path="/"/>
-          <Question path="/question/:id" 
+          <Question path="/question/:_id" 
           getQuestion={(id) => this.getQuestion(id)}
           postAnswer={(answer, id) => this.postAnswer(answer, id)}
           updateQuestion = {(questionId, answerId, newVote) => this.updateQuestion(questionId, answerId, newVote)}

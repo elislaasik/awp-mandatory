@@ -30,7 +30,7 @@ onVoteClick(answerId){
  //  TODO this. set state update the questions answer based on the id
 }
     render() {
-        const id = this.props.id;
+        const id = this.props._id;
         const question = this.props.getQuestion(id)
         let content = 'loading'
         let answers = []

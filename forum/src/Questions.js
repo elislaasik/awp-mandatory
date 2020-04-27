@@ -7,7 +7,7 @@ class Questions extends Component {
 
         const content = elm =>
                 <li key={elm.id}>
-                    <Link to={"/question/"+elm.id}>{elm.text}</Link>
+                    <Link to={"/question/"+elm._id}>{elm.text}</Link>
                 </li>
         let questions = this.props.data
         let list = this.props.data.map(content)
