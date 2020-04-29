@@ -16,7 +16,7 @@ app.use(express.static('../client/build'));
 
 (async (_) => {
   try {
-    const url = process.env.MONGO_URL;
+    const url = process.env.MONGO_URL || 'mongodb+srv://forumDB:forumDB@forumdb-zr6ni.mongodb.net/test?retryWrites=true&w=majority';
     //'mongodb+srv://forumDB:forumDB@forumdb-zr6ni.mongodb.net/test?retryWrites=true&w=majority'
     await mongoose.connect(url, {
       useNewUrlParser: true,
@@ -30,7 +30,7 @@ app.use(express.static('../client/build'));
 })();
 
 /**** Routes ****/
-app.get("/", async (req, res) => res.json(await models.Question.find({})));
+app.get("/questions", async (req, res) => res.json(await models.Question.find({})));
 
 app.post("/post1", async (req, res) => {
   try {

@@ -7,6 +7,8 @@ import PostAnswer from './PostAnswer';
 import './styles/App.scss';
 
 const baseUrl = 'https://elis-forum-app.herokuapp.com/'
+//const baseUrl = "http://localhost:8080"
+
 class App extends Component {
 
   constructor(props){
@@ -19,16 +21,17 @@ class App extends Component {
   }
 
   async callAPI() {
-    let data = await fetch(baseUrl);
+    let data = await fetch(baseUrl + '/questions');
     if (data) data = await data.json();
     this.setState(_ => ({
         questions: data
     }));
     console.log(this.state.questions)
-}
-
+  }
+  
 componentDidMount(){
-    this.callAPI();
+    this.callAPI().then(()=> console.log('get all questions'))
+    //this.getKittens().then(() => console.log("Kittens gotten!"));
 }
 
   getQuestion(id){
@@ -37,7 +40,7 @@ componentDidMount(){
   }
 
   async addQuestion(text){
-    const response = await fetch(baseUrl + 'post1', {
+    const response = await fetch(baseUrl + '/post1', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -47,13 +50,13 @@ componentDidMount(){
         })
     });
     const data = await response.json();
-    this.callAPI()
+    await this.callAPI()
     console.log(data)
 }
 
 
   async postAnswer(answer, id){
-    const response = await fetch(baseUrl + 'post3', {
+    const response = await fetch(baseUrl + '/post3', {
         headers: {
             'Content-Type': 'application/json'
         },
