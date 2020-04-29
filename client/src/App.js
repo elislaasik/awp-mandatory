@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   async callAPI() {
-    let data = await fetch(baseUrl + '/questions');
+    let data = await fetch(baseUrl + 'questions');
     if (data) data = await data.json();
     this.setState(_ => ({
         questions: data
@@ -40,7 +40,7 @@ componentDidMount(){
   }
 
   async addQuestion(text){
-    const response = await fetch(baseUrl + '/post1', {
+    const response = await fetch(baseUrl + 'post1', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -56,7 +56,7 @@ componentDidMount(){
 
 
   async postAnswer(answer, id){
-    const response = await fetch(baseUrl + '/post3', {
+    const response = await fetch(baseUrl + 'post3', {
         headers: {
             'Content-Type': 'application/json'
         },
