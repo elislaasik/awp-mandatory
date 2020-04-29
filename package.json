@@ -1,0 +1,19 @@
+{
+  "name": "mandatory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elislaasik/awp-mandatory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elislaasik/awp-mandatory/issues"
+  },
+  "homepage": "https://github.com/elislaasik/awp-mandatory#readme"
+}
