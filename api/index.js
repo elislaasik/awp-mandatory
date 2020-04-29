@@ -104,6 +104,9 @@ app.post("/post3", async (req, res) => {
 // });
 
 
+app.get('*', (req, res) =>
+    res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
+);
 
 app.listen(port, () =>
   console.log(`${appName} API launching on port ${port}!`)
