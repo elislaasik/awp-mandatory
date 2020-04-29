@@ -16,8 +16,7 @@ app.use(express.static('../client/build'));
 
 (async (_) => {
   try {
-    const url = process.env.MONGO_URL || 'mongodb+srv://forumDB:forumDB@forumdb-zr6ni.mongodb.net/test?retryWrites=true&w=majority';
-    //'mongodb+srv://forumDB:forumDB@forumdb-zr6ni.mongodb.net/test?retryWrites=true&w=majority'
+    const url = process.env.MONGO_URL 
     await mongoose.connect(url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
