@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd api && node app.js",
+    "start": "cd api && node index.js",
     "dev": "cd client && npm start",
     "test": "cd client && npm test",
     "preinstall": "cd api && npm install",
