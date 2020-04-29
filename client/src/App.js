@@ -6,7 +6,7 @@ import AskQuestion from './AskQuestion';
 import PostAnswer from './PostAnswer';
 import './styles/App.scss';
 
-
+const baseUrl = 'https://elis-forum-app.herokuapp.com/'
 class App extends Component {
 
   constructor(props){
@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   async callAPI() {
-    let data = await fetch("http://localhost:8080/");
+    let data = await fetch(baseUrl);
     if (data) data = await data.json();
     this.setState(_ => ({
         questions: data
@@ -37,7 +37,7 @@ componentDidMount(){
   }
 
   async addQuestion(text){
-    const response = await fetch('http://localhost:8080/post1', {
+    const response = await fetch(baseUrl + 'post1', {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -53,7 +53,7 @@ componentDidMount(){
 
 
   async postAnswer(answer, id){
-    const response = await fetch('http://localhost:8080/post3', {
+    const response = await fetch(baseUrl + 'post3', {
         headers: {
             'Content-Type': 'application/json'
         },
